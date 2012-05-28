@@ -1,0 +1,15 @@
+[user]
+  name = Doug Weber
+  email = dweber@reisenderlabs.net
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  status = auto
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+[push]
+	default = current
