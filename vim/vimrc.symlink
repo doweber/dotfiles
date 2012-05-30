@@ -17,6 +17,8 @@ set autoindent
 
 set backspace=2
 
+set clipboard=unnamed
+
 noremap <C-B> :!php -l -f %<CR>
 
 map <F2> :NERDTreeToggle<CR>
