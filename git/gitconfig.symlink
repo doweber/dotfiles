@@ -11,5 +11,6 @@
   ci = commit
   br = branch
   co = checkout
+  clone = clone --recursive
 [push]
 	default = current
