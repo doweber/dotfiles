@@ -17,6 +17,8 @@ set autoindent
 
 set backspace=2
 
+set hls
+
 "set clipboard=unnamed
 
 noremap <C-B> :!php -l -f %<CR>
