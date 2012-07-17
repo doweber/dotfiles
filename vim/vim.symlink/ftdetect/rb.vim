@@ -1,1 +1,1 @@
-set commentstring=#\ %s
+autocmd FileType ruby set commentstring=#\ %s

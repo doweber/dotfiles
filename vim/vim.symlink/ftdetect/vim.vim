@@ -1,1 +1,1 @@
-set commentstring=\"\ %s
+autocmd FileType vim set commentstring=\"\ %s
