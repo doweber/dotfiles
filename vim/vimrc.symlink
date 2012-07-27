@@ -44,6 +44,12 @@ au! BufRead,BufNewFile *.ctp,*.thtml     setfiletype php
 au! BufRead,BufNewFile *.jhtml     setfiletype html
 au! BufRead,BufNewFile *.ejs     setfiletype html
 
+" auto folding
+set foldmethod=indent
+set foldcolumn=2
+set foldlevel=20
+set foldlevelstart=20
+
 function! LoadTemplate(extension) 
 	"silent! :execute '0r $VIMHOME/templates/'. a:extension. '.tpl' 
 	silent! execute 'source $VIMHOME/filetypes/'. a:extension. '.vim' 
