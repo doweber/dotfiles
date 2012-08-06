@@ -7,3 +7,9 @@
 [submodule "vim/vim.symlink/bundle/vim-commentary"]
 	path = vim/vim.symlink/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/vim.symlink/bundle/ruby-matchit"]
+	path = vim/vim.symlink/bundle/ruby-matchit
+	url = https://github.com/vim-scripts/ruby-matchit.git
+[submodule "vim/vim.symlink/bundle/marvim"]
+	path = vim/vim.symlink/bundle/marvim
+	url = https://github.com/vim-scripts/marvim.git
