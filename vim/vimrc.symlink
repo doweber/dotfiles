@@ -21,7 +21,7 @@ set hls
 
 noremap <C-B> :!php -l -f %<CR>
 
-map <F2> :NERDTreeToggle<CR>
+"map <F2> :NERDTreeToggle<CR>
 map <F4> VaBzf
 
 map <C-l>	:bn<CR>
