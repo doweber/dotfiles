@@ -13,3 +13,6 @@
 [submodule "vim/vim.symlink/bundle/marvim"]
 	path = vim/vim.symlink/bundle/marvim
 	url = https://github.com/vim-scripts/marvim.git
+[submodule "vim/vim.symlink/bundle/tagbar"]
+	path = vim/vim.symlink/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
