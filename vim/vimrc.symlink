@@ -22,7 +22,7 @@ set hls
 noremap <C-B> :!php -l -f %<CR>
 
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>o :TagbarOpen<CR>
+map <Leader>o :TagbarToggle<CR>
 map <Leader>t <C-p>
 
 "map <F2> :NERDTreeToggle<CR>
