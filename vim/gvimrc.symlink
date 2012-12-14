@@ -1,4 +1,5 @@
-color zenburn
+color darkblue
+
 
 "color torte 
 " darkblue, desert, elflord, evening, koehler, morning, murphy, pablo, peachpuff, ron, shine, shine, torte, and zellner
@@ -32,4 +33,5 @@ nmap <C-F11> :if &guioptions=~'m' \| set guioptions-=m \| else \| set guioptions
 nmap <C-F7> :if &guioptions=~'r' \| set guioptions-=r \| else \| set guioptions+=r \| endif<CR>
 
 "set gfn=Terminal\ Bold\ 8
-set gfn=Monospace\ 8
+set gfn=Monospace\ 9
+"set guifont=Terminal\ Bold:h9
