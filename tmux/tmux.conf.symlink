@@ -13,7 +13,7 @@ bind | split-window -h
 
 bind tab select-pane -t :.+
 
-#bind m break-pane
+# bind m break-pane
 
 bind -r K resize-pane -U 2
 bind -r J resize-pane -D 2
@@ -27,4 +27,5 @@ bind C-l swapp -D
 
 
 # add maximizing
-bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom 'clear && echo TMUX ZOOM && read'; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
+# bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
+bind m run "~/.dotfiles/tmux/maximize.sh"
