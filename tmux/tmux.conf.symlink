@@ -24,3 +24,7 @@ bind C-h swapp -U
 bind C-j swapp -D
 bind C-k swapp -U
 bind C-l swapp -D
+
+
+# add maximizing
+bind } run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom 'clear && echo TMUX ZOOM && read'; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi
