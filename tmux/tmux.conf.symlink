@@ -30,3 +30,29 @@ bind C-l swapp -D
 # add maximizing
 # bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
 bind m run "~/.dotfiles/tmux/maximize.sh"
+
+
+set-option -g status on
+set-option -g status-interval 2
+set-option -g status-utf8 on
+set-option -g status-justify "centre"
+set-option -g status-left-length 60
+set-option -g status-right-length 90
+set-option -g status-left "#(~/Devel/tmux-powerline/powerline.sh left)"
+set-option -g status-right "#(~/Devel/tmux-powerline/powerline.sh right)"
+
+set -g status-bg colour235
+set -g status-fg colour255
+set-option -g status-attr default
+
+set-option -g visual-bell off
+# set-option -g visual-content on
+# set-option -g visual-activity on
+set-option -g message-attr "bold"
+set-option -g message-bg "default"
+set-option -g pane-active-border-fg colour33
+set-option set-titles off
+
+set-window-option -g window-status-current-format "[#I:#W#F]"
+setw -g monitor-activity on
+setw -g window-status-current-bg red
