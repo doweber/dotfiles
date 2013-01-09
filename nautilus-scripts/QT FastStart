@@ -1,0 +1,38 @@
+#! /bin/bash
+
+#Check for required software...
+qtfaststart_bin=`which qt-faststart | grep -c "qt-faststart"`
+
+# Check for ffmpeg
+if [ $qtfaststart_bin -eq "0" ]; then
+  zenity --error --title="Error - Missing Software" \
+   --text="You do not have the qt-faststart utility installed
+   Please install it in order to use this script."
+  exit
+fi
+
+for arg
+do
+  (
+    DEST="$arg-qtfs"
+    if [ -f $DEST ]
+    then
+      zenity --error --text="$DEST already exists."
+    else
+      echo "# Processing: $arg"
+      qt-faststart "$arg" "$DEST"
+    fi
+  ) |
+
+  zenity --progress \
+    --title="Converting..." \
+    --pulsate \
+    --auto-close
+done
+
+zenity --info --title="Conversion..." --text="Finished!"
+
+if [ "$?" = -1 ] ; then
+        zenity --error \
+          --text="Update canceled."
+fi

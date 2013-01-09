@@ -1,0 +1,45 @@
+#! /bin/bash
+
+#Check for required software...
+ffmpeg_bin=`which ffmpeg | grep -c "ffmpeg"`
+
+# Check for ffmpeg
+if [ $ffmpeg_bin -eq "0" ]; then
+  zenity --error --title="Error - Missing Software" \
+   --text="You do not have the ffmpeg package installed
+   Please install it in order to use this script."
+  exit
+fi
+
+TMPDEST="$HOME/Downloads/_output.mp4"
+
+for arg
+do
+  (
+    DEST="$HOME/Downloads/$arg.mp4"
+    if [ -f $DEST ]
+    then
+      zenity --error --text="$DEST already exists."
+    else
+      echo "# Processing: $arg"
+      #ffmpeg -i "./$arg" -threads 0 -acodec libfaac -ab 110k -vcodec libx264 -vpre veryslow -vpre main -qmax 33 -y "$TMPDEST"
+      ffmpeg -i "./$arg" -threads 0 -acodec libfaac -ab 110k -vcodec libx264 -vpre veryslow -vpre ipod640 -qmax 32 -y "$TMPDEST"
+      echo "# optimize for streaming"
+      qt-faststart "$TMPDEST" "$DEST"
+      echo "# remove temp files"
+      rm "$TMPDEST"
+    fi
+  ) |
+
+  zenity --progress \
+    --title="Converting..." \
+    --pulsate \
+    --auto-close
+done
+
+zenity --info --title="Conversion..." --text="Finished!"
+
+if [ "$?" = -1 ] ; then
+        zenity --error \
+          --text="Update canceled."
+fi
