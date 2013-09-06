@@ -8,7 +8,7 @@
   status = auto
 [alias]
   st = status
-  ci = commit
+  ci = commit -a -v
   br = branch
   co = checkout
   cloner = clone --recursive
