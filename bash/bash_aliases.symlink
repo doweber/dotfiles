@@ -1,2 +1,3 @@
 #!/bin/bash
 alias xmltidy="tidy -utf8 -xml -w 255 -i -c -q -asxml"
+alias vims="vim -S ~/.lastvimsession"
