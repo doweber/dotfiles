@@ -62,3 +62,6 @@ Bundle 'vim-scripts/ruby-matchit'
 
 " JavaScript
 Bundle 'Shutnik/jshint2.vim'
+
+" CSV
+Bundle 'chrisbra/csv.vim'
