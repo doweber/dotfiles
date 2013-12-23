@@ -19,3 +19,6 @@
 [submodule "vim/vim.symlink/bundle/jshint2.vim"]
 	path = vim/vim.symlink/bundle/jshint2.vim
 	url = https://github.com/Shutnik/jshint2.vim.git
+[submodule "vim/vim.symlink/bundle/vundle"]
+	path = vim/vim.symlink/bundle/vundle
+	url = https://github.com/gmarik/vundle.git

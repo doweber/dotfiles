@@ -1,101 +1,18 @@
-call pathogen#infect()
+" call pathogen#infect()
+
+set nocompatible
+
+" ================ Vundle Initialization ===============
+" This loads all the plugins in ~/.vim/bundle
+filetype off
+source ~/.vim/vundle.vim
 syntax on
-set nobackup
+filetype plugin indent on
+" =======================================================
 
-color wombat256
+" Load in additional settings
+runtime! settings/**.vim
 
-set expandtab
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
-
-set encoding=utf-8
-
-set autoindent
-
-set backspace=2
-
-set hls
-
-"set clipboard=unnamed
-
-noremap <C-B> :!php -l -f %<CR>
-
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>o :TagbarToggle<CR>
-map <Leader>t <C-p>
-
-"map <F2> :NERDTreeToggle<CR>
-map <F4> VaBzf
-
-map <C-l>	:bn<CR>
-map <C-h>	:bp<CR>
-
-map <C-k>	:cp<CR>
-map <C-j>	:cn<CR>
-
-" turn spell check on... use z= to get suggestion list
-map <F9>	:setlocal spell spelllang=en_us<CR>
-map <F8>	:setlocal nospell<CR>
-
-" HTML Tidy, http://tidy.sourceforge.net/
-" select xml text to format and hit ,x
-vmap ,x :!tidy -q -i -xml<CR>
-
-au! BufRead,BufNewFile *.as     setfiletype javascript
-au! BufRead,BufNewFile *.as,*.json     setfiletype javascript
-au! BufRead,BufNewFile *.ctp,*.thtml     setfiletype php
-au! BufRead,BufNewFile *.jhtml     setfiletype html
-au! BufRead,BufNewFile *.ejs     setfiletype html
-
-" auto folding
-set foldmethod=indent
-set foldcolumn=2
-set foldlevel=20
-set foldlevelstart=20
-
-function! LoadTemplate(extension) 
-	"silent! :execute '0r $VIMHOME/templates/'. a:extension. '.tpl' 
-	silent! execute 'source $VIMHOME/filetypes/'. a:extension. '.vim' 
-endfunction
-function! LoadPatterns(extension) 
-	let foo = a:extension
-	"silent! execute 'source $VIMHOME/templates/'. a:extension. '.patterns.tpl' 
-	silent! execute 'source $VIMHOME/templates/'. foo . '.patterns.tpl' 
-endfunction
-
-"autocmd BufNewFile * silent! call LoadTemplate('%:h')
-autocmd BufNewFile,BufRead * silent! call LoadTemplate('%:e')
-"autocmd BufNewFile,BufRead * silent! call LoadPatterns('%:e')
-" autocmd BufNewFile * call Testing('%:h')
-
-nnoremap <tab> /<+.\{-1,}+><cr>c/+>/e<cr>
-inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
-match Todo /<+.\++>/
-
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
-set statusline+=%{rvm#statusline()}
-
-" signs
-" sign define information text=!> linehl=Warning texthl=Error
-
-function DelBufferAndNext()
-    let s:old_bufnr = bufnr('%')
-    bnext
-    exec s:old_bufnr . 'bd'
-    unlet s:old_bufnr
-endfunction
-command -nargs=0 BD call DelBufferAndNext()
-
-" tagbar
-
-let g:tagbar_compact = 1
-let g:tagbar_sort = 0
-let g:tagbar_autofocus = 1
-
-
-" whitespace chars
-
-set list
-set listchars=tab:>.,trail:.,nbsp:.
-autocmd filetype html,xml set listchars-=tab:>.
+" Machine-local vim settings - keep this at the end
+" --------------------------
+silent! source ~/.vimrc.local
