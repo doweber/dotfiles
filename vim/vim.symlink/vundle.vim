@@ -1,4 +1,7 @@
 " fill this out
+" vundle commands
+" vim +BundleInstall +qall
+" vim +BundleUpdate +qall
 
 
 set rtp+=~/.vim/bundle/vundle/
@@ -38,8 +41,20 @@ Bundle 'bling/vim-airline'
 " ================== Commands =====================
 Bundle 'tpope/vim-fugitive'
 
+Bundle 'tpope/vim-surround'
 
 Bundle 'tpope/vim-commentary'
   autocmd FileType ruby set commentstring=#\ %s
   autocmd FileType vim set commentstring=\"\ %s
   autocmd FileType javascript set commentstring=\/\/\ %s
+
+
+
+" ============= Language Additions ================
+" Ruby
+"
+Bundle 'vim-scripts/ruby-matchit'
+
+
+" JavaScript
+Bundle 'Shutnik/jshint2.vim'
