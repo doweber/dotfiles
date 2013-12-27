@@ -29,3 +29,4 @@ match Todo /<+.\++>/
 
 
 command -nargs=0 BD call DelBufferAndNext()
+map <Leader>d :BD<CR>
