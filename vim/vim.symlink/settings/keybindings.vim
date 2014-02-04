@@ -30,3 +30,15 @@ match Todo /<+.\++>/
 
 command -nargs=0 BD call DelBufferAndNext()
 map <Leader>d :BD<CR>
+
+" ctrl funky
+noremap <C-l> :CtrlPFunky<CR>
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
