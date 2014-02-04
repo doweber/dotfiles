@@ -64,4 +64,7 @@ Bundle 'vim-scripts/ruby-matchit'
 Bundle 'Shutnik/jshint2.vim'
 
 " CSV
-Bundle 'chrisbra/csv.vim'
+" Bundle 'chrisbra/csv.vim'
+
+" Coffee Script
+Bundle 'kchmck/vim-coffee-script'
