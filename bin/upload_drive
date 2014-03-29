@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -avz --inplace $HOME/.personal_drive 9005@usw-s009.rsync.net:personal
