@@ -74,5 +74,5 @@ Bundle 'Shutnik/jshint2.vim'
 Bundle 'kchmck/vim-coffee-script'
 
 " GO
-Bundle 'fatih/vim-go'
+Bundle 'jnwhiteh/vim-golang'
 
