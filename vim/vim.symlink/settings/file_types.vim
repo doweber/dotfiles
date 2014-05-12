@@ -11,3 +11,5 @@ function! StripTrailingWhite()
 endfunction
 
 autocmd BufWritePre *.{rb,php} call StripTrailingWhite()
+
+autocmd FileType go setlocal ts=2 sw=2 sts=0 noexpandtab autoindent nolist

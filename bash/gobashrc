@@ -1,0 +1,4 @@
+# setup go paths
+export GOTPATH=$HOME/.goenv
+export PATH=$GOPATH/bin:$PATH
+
