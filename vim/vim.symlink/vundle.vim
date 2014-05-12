@@ -17,7 +17,7 @@ Bundle 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['funky']
 Bundle 'tacahiroy/ctrlp-funky'
 
-Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'majutsushi/tagbar'
   let g:tagbar_compact = 1
