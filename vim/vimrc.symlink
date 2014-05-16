@@ -15,4 +15,6 @@ runtime! settings/**.vim
 
 " Machine-local vim settings - keep this at the end
 " --------------------------
+" set term=screen-256color
+" --------------------------
 silent! source ~/.vimrc.local
