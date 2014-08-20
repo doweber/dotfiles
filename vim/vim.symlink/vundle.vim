@@ -57,6 +57,8 @@ Bundle 'tpope/vim-commentary'
   autocmd FileType javascript set commentstring=\/\/\ %s
 
 
+" ============= External Integrations ================
+Bundle 'mrtazz/simplenote.vim'
 
 " ============= Language Additions ================
 " Ruby
