@@ -51,7 +51,7 @@ set-option -g visual-bell off
 set-option -g message-attr "bold"
 set-option -g message-bg "default"
 set-option -g pane-active-border-fg colour33
-set-option set-titles off
+set-option -g set-titles off
 
 set-window-option -g window-status-current-format "[#I:#W#F]"
 setw -g monitor-activity on
