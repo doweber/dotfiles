@@ -9,6 +9,11 @@ if command_exists brew ; then
   then
     source $(brew --prefix 'git')'/etc/bash_completion.d/git-prompt.sh'
   fi
+
+  if [ -f $(brew --prefix 'git')'/etc/bash_completion.d/git-completion.bash' ]
+  then
+    source $(brew --prefix 'git')'/etc/bash_completion.d/git-completion.bash'
+  fi
 fi
 
 function parse_git_dirty {
