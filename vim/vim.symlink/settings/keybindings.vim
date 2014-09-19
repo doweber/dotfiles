@@ -1,4 +1,4 @@
-noremap <C-B> :!php -l -f %<CR>
+"noremap <C-B> :!php -l -f %<CR>
 
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>o :TagbarToggle<CR>
@@ -36,6 +36,11 @@ noremap <C-f> :CtrlPFunky<CR>
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
+map <C-m> :CtrlPModified<CR>
+map <C-b> :CtrlPBranch<CR>
+map <C-y> :CtrlPCmdPalette<CR>
+map <C-g> :CtrlPFiletype<CR>
 
 " Gif config
 map  / <Plug>(easymotion-sn)

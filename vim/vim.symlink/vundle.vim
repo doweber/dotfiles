@@ -17,6 +17,11 @@ Bundle 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['funky']
 Bundle 'tacahiroy/ctrlp-funky'
 
+Bundle 'danielcbaldwin/ctrlp-modified.vim'
+
+Bundle 'fisadev/vim-ctrlp-cmdpalette'
+Bundle 'endel/ctrlp-filetype.vim'
+
 Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'majutsushi/tagbar'
