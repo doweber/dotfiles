@@ -84,5 +84,5 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'jnwhiteh/vim-golang'
 
 " JSX (react js)
-Bundle 'git://github.com/jsx/jsx.vim.git'
+Bundle 'mxw/vim-jsx.git'
 
