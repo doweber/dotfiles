@@ -29,6 +29,8 @@ Bundle 'majutsushi/tagbar'
   let g:tagbar_sort = 0
   let g:tagbar_autofocus = 1
 
+Bundle 'terryma/vim-multiple-cursors.git'
+
 
 " ===================== UI ========================
 Bundle 'bling/vim-airline'
