@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Zipping $1"
+zip -9 -y -r -q -e $1.zip $1
