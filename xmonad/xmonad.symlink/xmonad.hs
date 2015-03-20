@@ -12,9 +12,6 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import Graphics.X11.ExtraTypes.XF86  
 
-import XMonad.Actions.Volume
-import Data.Map     (fromList)
-import Data.Monoid  (mappend)
  
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobarrc"
@@ -28,12 +25,7 @@ main = do
                                 ppTitle = xmobarColor "green" "" . shorten 50
                               }
           , modMask = mod1Mask
-          , keys defaultConfig `mapped`
-          \c -> fromList [
-              ((0, xK_F6), lowerVolume 4 >> return ()),
-              ((0, xK_F7), raiseVolume 4 >> return ())
-          ]
         } `additionalKeys`
-        [   ((mod1Mask, xF86XK_MonBrightnessUp), spawn "xbacklight +20")
-          , ((mod1Mask, xF86XK_MonBrightnessDown), spawn "xbacklight -20")
+        [   ((mod1Mask, xF86XK_MonBrightnessUp), spawn "xbacklight +40")
+          , ((mod1Mask, xF86XK_MonBrightnessDown), spawn "xbacklight -40")
         ]
