@@ -3,7 +3,7 @@
 FROM ubuntu:14.04
 MAINTAINER Doug Weber <doug@masteryconnect.com>
 RUN sed -i '26s/) ALL/) NOPASSWD:ALL/' /etc/sudoers
-RUN groupadd --gid $GROUPID dev && useradd -m --uid $USERID --gid $GROUPID dev -G sudo
+RUN groupadd -o --gid $GROUPID dev && useradd -m --uid $USERID --gid $GROUPID dev -g dev -G sudo
 RUN apt-get update && apt-get install -y build-essential curl
 USER dev
 WORKDIR /home/dev
