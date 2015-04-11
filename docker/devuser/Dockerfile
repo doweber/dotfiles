@@ -1,0 +1,9 @@
+# The dev user base image that all other dev images are built from
+# main purpose is to create the dev user that matches the user doing the image build
+FROM ubuntu:14.04
+MAINTAINER Doug Weber <doug@masteryconnect.com>
+RUN sed -i '26s/) ALL/) NOPASSWD:ALL/' /etc/sudoers
+RUN groupadd --gid $GROUPID dev && useradd -m --uid $USERID --gid $GROUPID dev -G sudo
+RUN apt-get update && apt-get install -y build-essential curl
+USER dev
+WORKDIR /home/dev

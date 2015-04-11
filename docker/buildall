@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# build the devuser image
+GROUPID=`id -g` USERID=`id -u` bash -c 'cat devuser/Dockerfile | envsubst | sudo docker build -t foobar/devuser:base -'
+sudo docker build -t foobar/ruby:dev rubydev/
