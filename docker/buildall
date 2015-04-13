@@ -1,5 +1,19 @@
 #!/bin/bash
 
-# build the devuser image
-GROUPID=`id -g` USERID=`id -u` bash -c 'cat devuser/Dockerfile | envsubst | sudo docker build -t local/devuser:base -'
-sudo docker build -t local/ruby:dev rubydev/
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+  platform='linux'
+
+  # build the devuser image
+  GROUPID=`id -g` USERID=`id -u` bash -c 'cat devuser/Dockerfile | envsubst | sudo docker build -t local/devuser:base -'
+  sudo docker build -t local/ruby:dev rubydev/
+
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  platform='Darwin'
+
+  # build the devuser image
+  GROUPID=`id -g` USERID=`id -u` bash -c 'cat devuser/Dockerfile | envsubst | docker build -t local/devuser:base -'
+  docker build -t local/ruby:dev rubydev/
+
+fi
