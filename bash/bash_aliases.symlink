@@ -5,3 +5,6 @@ alias vims="vim -S ~/.lastvimsession"
 alias simplenote="vim +'Simplenote -l'"
 
 alias rs="touch ~/Sites/masteryconnect/tmp/restart.txt"
+
+alias d="sudo docker"
+alias dc="sudo docker-compose"
