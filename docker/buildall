@@ -2,22 +2,43 @@
 
 platform='unknown'
 unamestr=`uname`
+
+
+clean() {
+  if [ `$sudo docker images | grep -c "^<none>"` -gt 0 ]; then
+    echo "Cleaning up images..."
+    $sudo docker rmi -f $($sudo docker images | grep '^<none>' | awk '{print $3}' | tr "\\n" " ")
+  else
+    echo "no images to clean"
+  fi
+}
+
+
+buildall() {
+  # build the devuser image
+  GROUPID=`id -g` USERID=`id -u` bash -c "cat devuser/Dockerfile | envsubst | $sudo docker build -t local/devuser:base -"
+  $sudo docker build -t local/nginx nginx/
+  $sudo docker build -t local/ruby:dev rubydev/
+  $sudo docker build -t local/node:dev nodedev/
+  $sudo docker build -t local/java:dev javadev/
+}
+
+sudo=""
+
 if [[ "$unamestr" == 'Linux' ]]; then
   platform='linux'
-
-  # build the devuser image
-  GROUPID=`id -g` USERID=`id -u` bash -c 'cat devuser/Dockerfile | envsubst | sudo docker build -t local/devuser:base -'
-  sudo docker build -t local/ruby:dev rubydev/
-  sudo docker build -t local/node:dev nodedev/
-  sudo docker build -t local/java:dev javadev/
+  sudo="sudo"
 
 elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='Darwin'
+fi
 
-  # build the devuser image
-  GROUPID=`id -g` USERID=`id -u` bash -c 'cat devuser/Dockerfile | envsubst | docker build -t local/devuser:base -'
-  docker build -t local/ruby:dev rubydev/
-  docker build -t local/node:dev nodedev/
-  docker build -t local/java:dev javadev/
 
+
+# see which command we are running
+
+if [[ "$@" == '' ]]; then
+  buildall
+elif [[ "$@" == 'clean' ]]; then
+  clean
 fi
