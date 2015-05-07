@@ -17,10 +17,19 @@ clean() {
 buildall() {
   # build the devuser image
   GROUPID=`id -g` USERID=`id -u` bash -c "cat devuser/Dockerfile | envsubst | $sudo docker build -t local/devuser:base -"
-  $sudo docker build -t local/nginx nginx/
-  $sudo docker build -t local/ruby:dev rubydev/
-  $sudo docker build -t local/node:dev nodedev/
-  $sudo docker build -t local/java:dev javadev/
+
+  if [ "$1" == 'nginx' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/nginx nginx/
+  fi
+  if [ "$1" == 'rubydev' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/ruby:dev rubydev/
+  fi
+  if [ "$1" == 'nodedev' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/node:dev nodedev/
+  fi
+  if [ "$1" == 'javadev' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/java:dev javadev/
+  fi
 }
 
 sudo=""
@@ -38,7 +47,9 @@ fi
 # see which command we are running
 
 if [[ "$@" == '' ]]; then
-  buildall
+  buildall all
 elif [[ "$@" == 'clean' ]]; then
   clean
+else
+  buildall $@
 fi
