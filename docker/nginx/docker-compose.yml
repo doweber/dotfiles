@@ -1,0 +1,6 @@
+web:
+  image: local/nginx
+  ports:
+    - "80:80"
+  volumes:
+    - ".:/var/www/html"
