@@ -1,0 +1,23 @@
+#!/bin/bash
+# 9005@usw-s009.rsync.net
+
+
+if [[ "$1" == 'mount' ]]; then
+  echo "opening..."
+  cd ~/.personal_drive_enc
+  git pull
+  cd ~
+  encfs ~/.personal_drive_enc ~/Personal
+elif [[ "$1" == 'unmount' ]]; then
+  echo "closing..."
+  echo "short description of changes: "
+  read msg
+
+  umount ~/Personal
+  cd ~/.personal_drive_enc
+  git add .
+  git commit -m "$msg"
+  git push
+else
+  echo "usage: open_personal-drive [mount|unmount]"
+fi
