@@ -1,6 +1,6 @@
 # The dev user base image that all other dev images are built from
 # main purpose is to create the dev user that matches the user doing the image build
-FROM ubuntu:14.04
+FROM ubuntu:14.04.2
 MAINTAINER Doug Weber <doug@masteryconnect.com>
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN sed -i '26s/) ALL/) NOPASSWD:ALL/' /etc/sudoers

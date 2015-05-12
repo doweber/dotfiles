@@ -30,6 +30,9 @@ buildall() {
   if [ "$1" == 'javadev' -o "$1" == 'all' ]; then
     $sudo docker build -t local/java:dev javadev/
   fi
+  if [ "$1" == 'godev' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/go:dev godev/
+  fi
 }
 
 sudo=""
