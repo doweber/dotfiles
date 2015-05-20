@@ -33,6 +33,12 @@ buildall() {
   if [ "$1" == 'godev' -o "$1" == 'all' ]; then
     $sudo docker build -t local/go:dev godev/
   fi
+  if [ "$1" == 'octavedev' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/octave:dev octavedev/
+  fi
+  if [ "$1" == 'hoodie' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/hoodie hoodie/
+  fi
 }
 
 sudo=""
