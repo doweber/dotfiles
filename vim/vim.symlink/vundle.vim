@@ -3,37 +3,38 @@
 " vim +BundleInstall +qall
 " vim +BundleUpdate +qall
 
+" git clone https://github.com/gmarik/Vundle.vim.git ./bundle/Vundle.vim
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " ================= Naviagtion ====================
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['funky']
-Bundle 'tacahiroy/ctrlp-funky'
+Plugin 'tacahiroy/ctrlp-funky'
 
-Bundle 'danielcbaldwin/ctrlp-modified.vim'
+Plugin 'danielcbaldwin/ctrlp-modified.vim'
 
-Bundle 'fisadev/vim-ctrlp-cmdpalette'
-Bundle 'endel/ctrlp-filetype.vim'
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
+Plugin 'endel/ctrlp-filetype.vim'
 
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
   let g:tagbar_compact = 1
   let g:tagbar_sort = 0
   let g:tagbar_autofocus = 1
 
-Bundle 'terryma/vim-multiple-cursors.git'
+Plugin 'terryma/vim-multiple-cursors.git'
 
 
 " ===================== UI ========================
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
   set laststatus=2
   let g:airline_theme = 'powerlineish'
   let g:airline_enable_branch = 1
@@ -54,37 +55,56 @@ Bundle 'bling/vim-airline'
   let g:airline_linecolumn_prefix = '⭡'
 
 " ================== Commands =====================
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
   autocmd FileType ruby set commentstring=#\ %s
   autocmd FileType vim set commentstring=\"\ %s
   autocmd FileType javascript set commentstring=\/\/\ %s
 
 
 " ============= External Integrations ================
-Bundle 'mrtazz/simplenote.vim'
+Plugin 'mrtazz/simplenote.vim'
 
 " ============= Language Additions ================
 " Ruby
 "
-Bundle 'vim-scripts/ruby-matchit'
+Plugin 'vim-scripts/ruby-matchit'
 
 
 " JavaScript
-Bundle 'Shutnik/jshint2.vim'
+Plugin 'Shutnik/jshint2.vim'
 
 " CSV
-" Bundle 'chrisbra/csv.vim'
+" Plugin 'chrisbra/csv.vim'
 
 " Coffee Script
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
 " GO
-Bundle 'jnwhiteh/vim-golang'
+Plugin 'jnwhiteh/vim-golang'
 
 " JSX (react js)
-Bundle 'mxw/vim-jsx.git'
+Plugin 'mxw/vim-jsx.git'
 
+
+Plugin 'rust-lang/rust.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
