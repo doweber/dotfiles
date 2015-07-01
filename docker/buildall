@@ -39,6 +39,9 @@ buildall() {
   if [ "$1" == 'hoodie' -o "$1" == 'all' ]; then
     $sudo docker build -t local/hoodie hoodie/
   fi
+  if [ "$1" == 'rethinkdb' -o "$1" == 'all' ]; then
+    $sudo docker build -t local/rethinkdb rethinkdb/
+  fi
 }
 
 sudo=""
