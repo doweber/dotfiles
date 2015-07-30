@@ -8,3 +8,9 @@ alias rs="touch ~/Sites/masteryconnect/tmp/restart.txt"
 
 alias d="sudo docker"
 alias dc="sudo docker-compose"
+
+alias gra="gr ./*.go"
+
+# git alias
+alias gpp="git pull && git push"
+alias gca="git commit -a -m"

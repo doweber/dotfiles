@@ -1,0 +1,34 @@
+# ubuntu
+# bashrc
+
+export TERM=screen-256color
+
+export DOTFILES=$HOME/.dotfiles
+
+. ~/.bash_aliases
+. $DOTFILES/bash/gitbashrc
+
+# setup my bin
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
+
+# go path
+export GOPATH=/home/dougw/Devel/goProjects
+export PATH=$PATH:$GOPATH/bin
+
+# direnv
+eval "$(direnv hook bash)"
+
+# go run
+gr() {
+  # $1 Specify search
+  if [ -n "$1" ]; then
+    gofiles="$1"
+  else
+    gofiles="main.go"
+  fi
+
+  go run $gofiles
+
+  unset gofiles
+}
