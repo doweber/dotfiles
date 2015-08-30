@@ -14,3 +14,5 @@ alias gra="gr ./*.go"
 # git alias
 alias gpp="git pull && git push"
 alias gca="git commit -a -m"
+
+alias tmuxa="tmux attach"

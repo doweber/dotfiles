@@ -4,6 +4,15 @@
 " vim +BundleUpdate +qall
 
 " git clone https://github.com/gmarik/Vundle.vim.git ./bundle/Vundle.vim
+let bundles_installed=1
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  let bundles_installed=0
+endif
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -95,6 +104,11 @@ Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+if bundles_installed == 0
+  echo "Installing Plugins, please ignore key map error messages"
+  echo ""
+  :PluginInstall
+endif
 filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
