@@ -27,7 +27,7 @@ Plugin 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['funky']
 Plugin 'tacahiroy/ctrlp-funky'
 
-Plugin 'danielcbaldwin/ctrlp-modified.vim'
+" Plugin 'danielcbaldwin/ctrlp-modified.vim'
 
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'endel/ctrlp-filetype.vim'
@@ -78,8 +78,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'mrtazz/simplenote.vim'
 
 " ============= Language Additions ================
+Plugin 'scrooloose/syntastic'
+
 " Ruby
-"
 Plugin 'vim-scripts/ruby-matchit'
 
 
@@ -93,7 +94,7 @@ Plugin 'Shutnik/jshint2.vim'
 Plugin 'kchmck/vim-coffee-script'
 
 " GO
-Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 
 " JSX (react js)
 Plugin 'mxw/vim-jsx.git'

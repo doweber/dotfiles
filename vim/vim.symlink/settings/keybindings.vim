@@ -37,8 +37,8 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
-map <C-m> :CtrlPModified<CR>
-map <C-b> :CtrlPBranch<CR>
+"map <C-m> :CtrlPModified<CR>
+"map <C-b> :CtrlPBranch<CR>
 map <C-y> :CtrlPCmdPalette<CR>
 map <C-g> :CtrlPFiletype<CR>
 
