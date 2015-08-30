@@ -6,10 +6,11 @@ alias simplenote="vim +'Simplenote -l'"
 
 alias rs="touch ~/Sites/masteryconnect/tmp/restart.txt"
 
-alias d="sudo docker"
-alias dc="sudo docker-compose"
+alias d="docker"
+alias dc="docker-compose"
 
 alias gra="gr ./*.go"
+alias grm="go run ./main.go"
 
 # git alias
 alias gpp="git pull && git push"
