@@ -16,4 +16,4 @@ alias grm="go run ./main.go"
 alias gpp="git pull && git push"
 alias gca="git commit -a -m"
 
-alias tmuxa="tmux attach"
+alias tmuxa="tmux attach || tmux"
