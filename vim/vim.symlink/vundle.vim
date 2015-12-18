@@ -22,6 +22,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " ================= Naviagtion ====================
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['funky']
