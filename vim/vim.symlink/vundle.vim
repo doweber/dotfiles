@@ -44,7 +44,7 @@ Plugin 'terryma/vim-multiple-cursors.git'
 
 
 " ===================== UI ========================
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
   set laststatus=2
   let g:airline_theme = 'powerlineish'
   let g:airline#extensions#branch#enabled = 1
