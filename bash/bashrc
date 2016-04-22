@@ -6,6 +6,7 @@ export TERM=screen-256color
 export DOTFILES=$HOME/.dotfiles
 
 . ~/.bash_aliases
+. $DOTFILES/bash/git.completion.bash
 . $DOTFILES/bash/gitbashrc
 
 # setup my bin
