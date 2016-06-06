@@ -44,7 +44,7 @@ Plugin 'terryma/vim-multiple-cursors.git'
 
 
 " ===================== UI ========================
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
   set laststatus=2
   let g:airline_theme = 'powerlineish'
   let g:airline#extensions#branch#enabled = 1
@@ -105,6 +105,9 @@ Plugin 'rust-lang/rust.vim'
 
 " Elm
 Plugin 'lambdatoast/elm.vim.git'
+
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
 
 
 " All of your Plugins must be added before the following line
