@@ -17,3 +17,36 @@ alias gpp="git pull && git push"
 alias gca="git commit -a -m"
 
 alias tmuxa="tmux attach || tmux"
+
+alias mysql="d exec -it masteryconnect_mysql_1 mysql"
+
+alias avro-cli="java -jar ~/Devel/avro-tools-1.7.7.jar"
+
+# Dockerfile build, e.g., $dbu tcnksm/test
+# IMAGE github.com/foo/bar:v0.1.2
+# TAG github.com/foo/bar:latest
+dbu() {
+  if [ -n "$1" ]; then
+    IMAGENAME="$1"
+  fi
+
+  if [[ -z "$IMAGENAME" && `head -1 ./Dockerfile | grep -c '^#\s\?IMAGE'` = 1 ]]; then
+    IMAGENAME=$(head -1 ./Dockerfile | awk '{print $3}')
+  fi
+
+  if [ -n "$IMAGENAME" ]; then
+    exec 5>&1
+    ID=$($DOCKERCMD build -t=$IMAGENAME . | tee >(cat - >&5) | tail -1 | awk '{print $NF}')
+    echo -e "Built image: \033[32m$IMAGENAME\033[39m";
+  else
+    exec 5>&1
+    ID=$($DOCKERCMD build . | tee >(cat - >&5) | tail -1 | awk '{print $NF}')
+  fi
+
+  for tag in $(cat "./Dockerfile" | grep "^#\s\?TAG" | awk '{print $NF}'); do
+    echo -e "Setting tag: \033[32m$tag\033[39m";
+    $DOCKERCMD tag -f $ID $tag;
+  done
+
+  unset IMAGENAME
+}

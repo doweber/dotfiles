@@ -100,8 +100,11 @@ Plugin 'fatih/vim-go'
 " JSX (react js)
 Plugin 'mxw/vim-jsx.git'
 
-
+" Rust
 Plugin 'rust-lang/rust.vim'
+
+" Elm
+Plugin 'lambdatoast/elm.vim.git'
 
 
 " All of your Plugins must be added before the following line

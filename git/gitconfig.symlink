@@ -17,3 +17,7 @@
 	default = current
 [core]
   editor = /usr/bin/vim
+[difftool]
+	prompt = false
+[diff]
+	tool = vimdiff

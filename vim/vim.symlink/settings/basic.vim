@@ -17,7 +17,7 @@ set hls
 
 " auto folding
 set foldmethod=indent
-set foldcolumn=2
+"set foldcolumn=2
 set foldlevel=20
 set foldlevelstart=20
 
