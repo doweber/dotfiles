@@ -1,0 +1,4 @@
+#!/bin/bash
+#IFS=$'\n'
+
+/usr/bin/ufraw-batch --out-type=jpg $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
