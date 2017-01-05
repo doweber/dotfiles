@@ -46,12 +46,19 @@ bindsym $mod+Shift+q kill
 # switch to urgent window
 bindsym $mod+x [urgent=latest] focus
 
+# i3lock
+#bindsym ctrl+Shift+l exec i3lock -c 000000
+bindsym ctrl+Shift+l exec /home/dougw/.dotfiles/bin/lock.sh /home/dougw/.lock_icon.png
+
+
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec /home/dougw/.dotfiles/bin/myrofi -show window
+bindsym $mod+space exec /home/dougw/.dotfiles/bin/myrofi -show drun
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 #bindsym $mod+j focus left
@@ -105,7 +112,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
+bindsym $mod+tab focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -144,6 +152,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+
+focus_follows_mouse no
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -179,3 +190,25 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
+
+# Sreen brightness controls
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# run compton
+exec compton -f
+
+# desktop background
+#exec feh --bg-fill /home/dougw/.bg.jpg
+exec_always /usr/bin/feh --bg-fill /home/dougw/.bg.jpg
