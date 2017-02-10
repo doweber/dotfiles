@@ -13,6 +13,10 @@ map <C-h>	:bp<CR>
 map <C-k>	:cp<CR>
 map <C-j>	:cn<CR>
 
+" better direction caps
+map H	^
+map L	$
+
 " turn spell check on... use z= to get suggestion list
 map <F9>	:setlocal spell spelllang=en_us<CR>
 map <F8>	:setlocal nospell<CR>
