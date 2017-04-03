@@ -97,6 +97,7 @@ Plugin 'kchmck/vim-coffee-script'
 
 " GO
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 " JSX (react js)
 Plugin 'mxw/vim-jsx.git'
