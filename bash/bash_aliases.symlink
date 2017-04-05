@@ -9,7 +9,8 @@ alias rs="touch ~/Sites/masteryconnect/tmp/restart.txt"
 alias d="docker"
 alias dc="docker-compose"
 
-alias gra="gr ./*.go"
+alias grun="go run"
+alias gra="go run ./*.go"
 alias grm="go run ./main.go"
 
 # git alias
@@ -18,7 +19,7 @@ alias gca="git commit -a -m"
 
 alias tmuxa="tmux attach || tmux"
 
-alias mysql="d exec -it masteryconnect_mysql_1 mysql"
+#alias mysql="d exec -it masteryconnect_mysql_1 mysql"
 
 alias avro-cli="java -jar ~/Devel/avro-tools-1.7.7.jar"
 
