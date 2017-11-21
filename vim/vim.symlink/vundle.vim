@@ -75,6 +75,8 @@ Plugin 'tpope/vim-commentary'
   autocmd FileType vim set commentstring=\"\ %s
   autocmd FileType javascript set commentstring=\/\/\ %s
 
+" ============= EditorConfig ================
+Plugin 'editorconfig/editorconfig-vim'
 
 " ============= External Integrations ================
 Plugin 'mrtazz/simplenote.vim'

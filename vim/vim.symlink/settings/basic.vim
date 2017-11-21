@@ -1,5 +1,8 @@
 set nobackup
 
+" allow buffer swithing without requiring the buffer to be saved
+set hidden
+
 color wombat256
 
 set expandtab
