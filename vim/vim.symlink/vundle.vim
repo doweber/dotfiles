@@ -70,6 +70,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-surround'
 
+Plugin 'chrisbra/Colorizer'
+
 Plugin 'tpope/vim-commentary'
   autocmd FileType ruby set commentstring=#\ %s
   autocmd FileType vim set commentstring=\"\ %s
