@@ -98,7 +98,23 @@ case $LANG in
 		level_screen="仅在屏幕上浏览"
 		level_low="低品质"
 		level_high="高品质"
-		level_color="高品质（护色） "
+		level_color="高品质（护色） ";;
+		
+	de*)
+		# German (de-DE)
+		error_nofiles="Keine Datei ausgewählt."
+		error_noquality="Kein Komprimierungsgrad ausgewählt."
+		error_ghostscript="PDF Compress benötigt das ghostscript Paket, welches nicht installiert ist. Bitte installieren und erneut versuchen."
+		error_nopdf="Die ausgewählte Datei ist kein gültige PDF-Dokument."
+		label_filename="PDF speichern unter..."
+		label_level="Bitte wählen Sie unten einen Komprimierungsgrad."
+		optimization_level="Komprimierungsgrad"
+		level_default="Standard"
+		level_screen="nur Bildschirmausgabe"
+		level_low="Niedrige Qualität"
+		level_high="Hohe Qualität"
+		level_color="Niedrige Qualität (farbecht)"
+		job_done="wurde erfolgreich komprimiert"
 
 esac
 
