@@ -70,6 +70,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-surround'
 
+Plugin 'chrisbra/colorizer'
+
 Plugin 'tpope/vim-commentary'
   autocmd FileType ruby set commentstring=#\ %s
   autocmd FileType vim set commentstring=\"\ %s
@@ -112,6 +114,9 @@ Plugin 'lambdatoast/elm.vim.git'
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
+
+" TOML
+Plugin 'cespare/vim-toml'
 
 
 " All of your Plugins must be added before the following line
