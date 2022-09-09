@@ -54,3 +54,6 @@ for symlink in `find "$CURRDIR" -name "*.symlink" -not -path "*/vim/**/undo/*"`;
     fi
   fi
 done
+
+# clone tpm for tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
