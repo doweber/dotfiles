@@ -118,6 +118,9 @@ Plugin 'elixir-lang/vim-elixir'
 " TOML
 Plugin 'cespare/vim-toml'
 
+" Solidity
+Plugin 'tomlion/vim-solidity'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
