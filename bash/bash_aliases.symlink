@@ -25,6 +25,10 @@ alias tmuxa="tmux attach || tmux"
 
 alias avro-cli="java -jar ~/Devel/avro-tools-1.7.7.jar"
 
+alias ffmpeg='docker run --rm --user $(id -u):$(id -g) -v "$(pwd)":/work -w /work jrottenberg/ffmpeg:4.1-scratch'
+
+alias foo='echo "$(pwd)"'
+
 # Dockerfile build, e.g., $dbu tcnksm/test
 # IMAGE github.com/foo/bar:v0.1.2
 # TAG github.com/foo/bar:latest
