@@ -5,14 +5,17 @@ alias vims="vim -S ~/.lastvimsession"
 alias simplenote="vim +'Simplenote -l'"
 
 alias d="docker"
-alias dc="docker-compose"
-alias dcl="docker-compose logs -f --tail=30"
+alias dc="docker compose"
+alias dcl="docker compose logs -f --tail=30"
+alias dclf="docker compose logs -f --tail=1"
 
 alias grun="go run"
 alias gra="go run ./*.go"
 alias grm="go run ./main.go"
 
 # git alias
+alias gf="git fetch"
+alias gp="git pull"
 alias gpp="git pull && git push"
 alias gca="git commit -a -m"
 alias glg="git log --graph --pretty=oneline --abbrev-commit"
@@ -27,7 +30,7 @@ alias avro-cli="java -jar ~/Devel/avro-tools-1.7.7.jar"
 
 alias ffmpeg='docker run --rm --user $(id -u):$(id -g) -v "$(pwd)":/work -w /work jrottenberg/ffmpeg:4.1-scratch'
 
-alias foo='echo "$(pwd)"'
+alias serve='caddy file-server --listen :2015'
 
 # Dockerfile build, e.g., $dbu tcnksm/test
 # IMAGE github.com/foo/bar:v0.1.2

@@ -91,7 +91,7 @@ Plugin 'vim-scripts/ruby-matchit'
 
 
 " JavaScript
-Plugin 'Shutnik/jshint2.vim'
+"Plugin 'Shutnik/jshint2.vim'
 
 " CSV
 " Plugin 'chrisbra/csv.vim'
@@ -104,7 +104,8 @@ Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 " JSX (react js)
-Plugin 'mxw/vim-jsx.git'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 " Rust
 Plugin 'rust-lang/rust.vim'
