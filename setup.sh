@@ -10,7 +10,7 @@ if [ -z "$HOME" ]; then
 fi
 
 # clone tpm for tmux
-git clone ssh://git@github.com/NvChad/NvChad ~/.config/nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim
 
 
 # clone tpm for tmux
