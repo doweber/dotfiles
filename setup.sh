@@ -9,9 +9,17 @@ if [ -z "$HOME" ]; then
   echo $HOME
 fi
 
-for symlink in `find "$CURRDIR" -name "*.symlink" -not -path "*/vim/**/undo/*"`; do
-  linkname="$(basename ${symlink%.symlink})"
-  link="$HOME/.$linkname"
+# clone tpm for tmux
+git clone ssh://git@github.com/NvChad/NvChad ~/.config/nvim
+
+
+# clone tpm for tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+function runsymlink {
+  linkname=$1
+  link=$2
+  symlink=$3
   if [ "$SKIPALL" = "false" ]; then
     if [ -e $link ]; then
       if [[ "$OVERRIDEALL" = "false" && "$BACKUPALL" = "false" ]]; then
@@ -50,10 +58,31 @@ for symlink in `find "$CURRDIR" -name "*.symlink" -not -path "*/vim/**/undo/*"`;
         ;;
       esac
     else
+      echo "linking: $link -> $symlink"
       ln -s $symlink $link
     fi
+  else
+    echo "skipping link $linkname: $link -> $symlink"
   fi
+}
+
+for symlink in `find "$CURRDIR" -name "*.symlink" -not -path "*/vim/**/undo/*" -not -path "*.subsymlink/*"`; do
+  linkname="$(basename ${symlink%.symlink})"
+  link="$HOME/.$linkname"
+  # echo "bar skipping link $linkname: $link -> $symlink"
+  runsymlink $linkname $link $symlink
 done
 
-# clone tpm for tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+for symlink in `find "$CURRDIR" -name "*.subsymlink" -not -path "*/vim/**/undo/*"`; do
+  linkname="$(basename ${symlink%.subsymlink})"
+  link="$HOME/.$linkname"
+  for subsymlink in `find "$symlink" -name "*.symlink" -not -path "*/vim/**/undo/*"`; do
+    relsymlink="$(realpath --relative-to=$symlink $subsymlink)"
+    relsymlink="${relsymlink%.symlink}"
+    link="$link/$relsymlink"
+    # echo "foo skipping link $relsymlink: $link -> $subsymlink"
+    runsymlink $relsymlink $link $subsymlink
+  done
+done
+
+cd ~/.config/nvim && git checkout v2.0
