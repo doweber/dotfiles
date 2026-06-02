@@ -2,3 +2,9 @@ vim/vim.symlink/.netrwhist
 *.swp
 bin/terraform*
 bin/apex
+
+# Fonts are downloaded by fonts/install-fonts.sh, not committed.
+fonts/fonts.symlink/*.ttf
+fonts/fonts.symlink/*.ttc
+fonts/fonts.symlink/*.otf
+!fonts/fonts.symlink/.gitkeep

@@ -57,3 +57,6 @@ done
 
 # clone tpm for tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# download fonts (not committed to the repo — see fonts/install-fonts.sh)
+"$CURRDIR/fonts/install-fonts.sh"
