@@ -5,8 +5,8 @@ alias vims="vim -S ~/.lastvimsession"
 alias simplenote="vim +'Simplenote -l'"
 
 alias d="docker"
-alias dc="docker-compose"
-alias dcl="docker-compose logs -f --tail=30"
+alias dc="docker compose"
+alias dcl="docker compose logs -f --tail=30"
 
 alias grun="go run"
 alias gra="go run ./*.go"
